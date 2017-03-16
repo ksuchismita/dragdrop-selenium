@@ -27,10 +27,10 @@ public class DragDrop {
 		ac.contextClick(drag);
 		Thread.sleep(5000);
 		
-		WebElement demo = driver.findElement(By.linkText(".//*[@id='menu-top']/li[1]/a"));
+		/*WebElement demo = driver.findElement(By.linkText(".//*[@id='menu-top']/li[1]/a"));
 		ac.doubleClick(demo);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		
+		*/
 		driver.quit();		
 		
 	}
