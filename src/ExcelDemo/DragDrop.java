@@ -15,7 +15,7 @@ public class DragDrop {
 		Actions ac = new Actions(driver);
 		driver.get("https://jqueryui.com/droppable/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		/*driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		driver.switchTo().frame(0);
 		
@@ -24,14 +24,23 @@ public class DragDrop {
 		
 		ac.dragAndDrop(drag, drop).perform();
 		ac.doubleClick(drag);
-		ac.contextClick(drag);
-		Thread.sleep(5000);
+		ac.contextClick(drag);*/
+		
+		Thread.sleep(10000);
+		
+		driver.findElement(By.linkText("Resizable")).click();
+		System.out.println("click the button");
+		System.out.println("wait second");
+		WebElement drag1 = driver.findElement(By.xpath(".//*[@id='resizable']/div[3]"));
+		Thread.sleep(10000);
+		ac.clickAndHold(drag1).moveByOffset(50, 20).release(drag1).build().perform();
+		
+		
 		
 		/*WebElement demo = driver.findElement(By.linkText(".//*[@id='menu-top']/li[1]/a"));
 		ac.doubleClick(demo);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		*/
-		driver.quit();		
 		
 	}
 
